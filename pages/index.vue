@@ -2,7 +2,7 @@
     <div class="bg-[#fdf5ff] w-screen h-screen flex justify-center items-center overflow-hidden relative">
         <div class="flex flex-col items-center justify-center gap-7">
             <div class="flex flex-col lg:flex-row items-center justify-center gap-10">
-                <nuxt-img src="/img/polaUs.png" alt="Pola Us" />
+                <nuxt-img src="/img/polaUs2.png" alt="Pola Us" />
                 <Logo class="w-50 h-50" />
             </div>
             <h1 class="text-[#02150E] text-2xl">Veux tu être ma Valentine ?</h1>
