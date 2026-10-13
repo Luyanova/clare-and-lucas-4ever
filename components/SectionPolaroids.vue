@@ -78,13 +78,13 @@ interface PolaroidCard {
 
 const polaroidCards = ref<PolaroidCard[]>([
   { caption: 'Namur', emoji: '💕', backMessage: 'Le meilleur souvenir de Vanbox je crois ahah', image: '/img/namur.jpeg', flipped: false },
-  { caption: 'Nos 1 mois', emoji: '✨', backMessage: 'On était trop beau ! J\'étais tellement fier quand tu m\'as dit que je te connaissais mieux que personne en t\'offrant le carnet', image: '/img/1mois.jpeg', flipped: false },
+  { caption: 'Nos 1 mois', emoji: '✨', backMessage: 'On était trop beau ! J\'étais fier quand tu m\'as dit que je te connaissais mieux que personne avec le carnet', image: '/img/1mois.jpeg', flipped: false },
   { caption: 'CE date', emoji: '🌸', backMessage: 'Tu étais si belle ce soir là. J\'aurais carrément pu aboyer pour toi ahah', image: '/img/red.jpeg', flipped: false },
   { caption: 'Les jardins éléctroniques', emoji: '💖', backMessage: '(Juste pour dire qu\'on doit écouter plus de musique tech ensemble)', image: '/img/jardin.jpeg', flipped: false },
-  { caption: 'Paris à deux', emoji: '🦋', backMessage: 'Cette journée était sublime, on doit tellement aller ailleurs que Lille à deux. Ça nous fait tellement de bien. On était tropo heureux ce jour là', image: '/img/paris.jpeg', flipped: false },
+  { caption: 'Paris à deux', emoji: '🦋', backMessage: 'Cette journée était sublime, on doit tellement aller ailleurs que Lille à deux. On était si heureux ce jour là', image: '/img/paris.jpeg', flipped: false },
   { caption: 'Le premier noêl ensemble', emoji: '🌙', backMessage: 'Il y en aura des dizaines d\'autres.', image: '/img/noel.jpeg', flipped: false },
   { caption: 'Ta première saint-Valentin (et la notre aussi)', emoji: '💫', backMessage: 'Je ferais tout pour te rendre aussi heureuse que ce jour-là', image: '/img/st.jpeg', flipped: false },
-  { caption: 'Premier shooting photos', emoji: '🌹', backMessage: 'Mes photos dont je suis le plus fier, tu ressembles à un ange (même si ça me fane que tu les ai utilisé sur tinder ptdrrrrrrrrrrrrr + que tu m\'ai retiré de la collab azyyyy.).', image: '/img/ange.jpeg', flipped: false },
+  { caption: 'Premier shooting photos', emoji: '🌹', backMessage: 'Tu ressembles à un ange (même si ça me fane que tu as utilisé ça sur tinder ptdr + que tu m\'ai retiré du post azy).', image: '/img/ange.jpeg', flipped: false },
 ])
 
 function flipCard(index: number) {
