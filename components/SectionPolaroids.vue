@@ -78,7 +78,7 @@ interface PolaroidCard {
 
 const polaroidCards = ref<PolaroidCard[]>([
   { caption: 'Namur', emoji: '💕', backMessage: 'Le meilleur souvenir de Vanbox je crois ahah', image: '/img/namur.jpeg', flipped: false },
-  { caption: 'Nos 1 mois', emoji: '✨', backMessage: 'On était trop beau ! J\'étais fier quand tu m\'as dit que je te connaissais mieux que personne avec le carnet', image: '/img/1mois.jpeg', flipped: false },
+  { caption: 'Nos 1 mois', emoji: '✨', backMessage: 'On était trop beau ! J\'étais fier quand tu m\'as dit que je te connais mieux que personne avec le carnet', image: '/img/1mois.jpeg', flipped: false },
   { caption: 'CE date', emoji: '🌸', backMessage: 'Tu étais si belle ce soir là. J\'aurais carrément pu aboyer pour toi ahah', image: '/img/red.jpeg', flipped: false },
   { caption: 'Les jardins éléctroniques', emoji: '💖', backMessage: '(Juste pour dire qu\'on doit écouter plus de musique tech ensemble)', image: '/img/jardin.jpeg', flipped: false },
   { caption: 'Paris à deux', emoji: '🦋', backMessage: 'Cette journée était sublime, on doit tellement aller ailleurs que Lille à deux. On était si heureux ce jour là', image: '/img/paris.jpeg', flipped: false },
