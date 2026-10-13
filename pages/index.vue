@@ -1,11 +1,14 @@
 <template>
-    <div class="bg-[#fdf5ff] w-screen h-screen flex justify-center items-center overflow-hidden relative">
+  <div class="bg-[#fdf5ff] min-h-screen overflow-x-hidden">
+    <div class="bg-[#fdf5ff] w-full h-screen flex justify-center items-center overflow-hidden relative">
         <div class="flex flex-col items-center justify-center gap-7">
             <div class="flex flex-col lg:flex-row items-center justify-center gap-10">
                 <nuxt-img src="/img/polaUs2.png" alt="Pola Us" />
                 <Logo class="w-50 h-50" />
             </div>
-            <h1 class="text-[#02150E] text-2xl">Veux tu être ma Valentine ?</h1>
+            <h2 class="section-title text-[#02150E] text-4xl md:text-5xl lg:text-6xl">Bon anniversaire</h2>
+            <h1 class="text-[#02150E] text-xl">Veux tu passer une nouvelle année d'amour avec moi?</h1>
+            <p class="subtitle text-sm italic text-center">(sans pleurer cette fois promis)</p>
 
             <!-- Buttons -->
             <div class="flex items-center gap-6">
@@ -28,12 +31,20 @@
                     :class="[
                         'px-8 py-3 rounded-full font-semibold text-lg transition-colors duration-200 cursor-pointer',
                         'border border-[#f9a8d4] text-[#d68fba] bg-[#fdf2f8]/60 hover:bg-[#fdf2f8]',
-                        nonTeleported ? 'fixed z-50' : ''
+                        nonTeleported ? 'absolute z-20' : ''
                     ]"
                 >
                     Non
                 </button>
             </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce z-10 pointer-events-none">
+          <span class="text-[#C2B5E8]/40 text-[10px] uppercase tracking-[0.3em] font-light">scroll</span>
+          <svg class="w-5 h-5 text-[#C2B5E8]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
         </div>
 
         <!-- Modal overlay -->
@@ -47,7 +58,13 @@
                             flex flex-col items-center gap-4 animate-bounce-in">
                     <span class="text-5xl">💖</span>
                     <p class="text-[#02150E] text-lg leading-relaxed">
-                        Merci, j'ai hâte de faire cette première saint-valentin avec toi
+                        Merci, je t'aime fort. Tu es la meilleure chose qui me soit jamais arrivée.
+                    </p>
+                    <p class="text-[#103326] text-s leading-relaxed">
+                        (J'ai recyclé cette section oupsi)
+                    </p>
+                    <p class="text-[#103326] text-xs leading-relaxed">
+                        PS : rend moi vite mon adaptateur c'est chiant de coder sur un seul écran mdr
                     </p>
                     <button
                         @click="showModal = false"
@@ -60,6 +77,24 @@
             </div>
         </Transition>
     </div>
+
+    <!-- Transition: Light → Dark -->
+    <div class="h-32 md:h-48 bg-gradient-to-b from-[#fdf5ff] via-[#E8E0F5] to-[#0D0A1A]"></div>
+
+    <!-- Sections -->
+    <SectionTimeline />
+    <SectionPolaroids />
+    <SectionBucketList />
+    <SectionYouTube />
+    <SectionCompliments />
+
+    <!-- Footer -->
+    <footer class="bg-[#0D0A1A] border-t border-[#C2B5E8]/5 w-full py-8 flex items-center justify-center">
+      <p class="text-[#5A4F78] text-xs tracking-wide h-32 flex items-center justify-center pb-10">
+        fait avec ♡ pour toi
+      </p>
+    </footer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -83,11 +118,13 @@ function teleportNon() {
     nonTeleported.value = true
     const btnWidth = 120
     const btnHeight = 48
-    const maxX = window.innerWidth - btnWidth
-    const maxY = window.innerHeight - btnHeight
+    const clientW = document.documentElement.clientWidth || window.innerWidth
+    const clientH = document.documentElement.clientHeight || window.innerHeight
+    const maxX = Math.max(0, clientW - btnWidth - 20)
+    const maxY = Math.max(0, clientH - btnHeight - 20)
     nonPosition.value = {
-        top: Math.random() * maxY,
-        left: Math.random() * maxX,
+        top: Math.max(20, Math.random() * maxY),
+        left: Math.max(20, Math.random() * maxX),
     }
 }
 
@@ -153,6 +190,9 @@ function handleOui() {
 </script>
 
 <style scoped>
+.subtitle {
+    color: #b3c1bc;
+}
 /* Modal transition */
 .modal-enter-active,
 .modal-leave-active {

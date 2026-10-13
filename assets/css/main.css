@@ -1,1 +1,57 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+/*
+ * ── Design System Palette ──────────────────────────────
+ * Primary:    #C2B5E8 (lavender)
+ * Accent:     #E8A0BF (soft rose)
+ * Warm:       #F0C4A0 (peach)
+ * Mint:       #A0E8D0 (fresh mint)
+ * Bg Deep:    #0D0A1A (near-black purple)
+ * Bg Surface: #16112A (card layer)
+ * Bg Elevated:#1E1838 (elevated layer)
+ * Text:       #EDE8F5 (primary) / #8B7EAD (muted)
+ */
+
+:root {
+  --c-primary: #C2B5E8;
+  --c-primary-rgb: 194, 181, 232;
+  --c-accent: #E8A0BF;
+  --c-accent-rgb: 232, 160, 191;
+  --c-warm: #F0C4A0;
+  --c-warm-rgb: 240, 196, 160;
+  --c-mint: #A0E8D0;
+  --c-bg-deep: #0D0A1A;
+  --c-bg-surface: #16112A;
+  --c-bg-elevated: #1E1838;
+  --c-text: #EDE8F5;
+  --c-text-muted: #8B7EAD;
+  --c-text-dim: #5A4F78;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Section title styling */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
